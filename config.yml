@@ -1,0 +1,134 @@
+# Copyright © RunicCore 2020 All Rights Reserved
+debug: false
+MySQL:
+    enabled: false
+    host: localhost
+    username: admin
+    password: password
+    database: database
+    port: 3306
+
+features:
+  server-selector:
+    gui:
+      title: '&8Server Selector'
+      size: 27
+      contents:
+        kitpvp_offline:
+          slot: 11
+          item: diamondsword
+          amount: 1
+          name: '&6&lKitPvP Server'
+          lore:
+            - '&c&lOFFLINE'
+            - '&7'
+            - '&fA free-for-all fiercly contested'
+            - '&fPvP battle server'
+            - '&7'
+            - '&cEverything in this gamemode is'
+            - '&ccurrently in development, and some'
+            - '&cfeatures may be removed at any time.'
+            - '&7'
+            - '&c▸ Can''t connect'
+          flags:
+            - hide_attributes
+        kitpvp_online:
+          slot: 11
+          item: diamondsword
+          amount: 1
+          condition: '"%pinger_isonline_s26.hosthorde.com:26144%" == "Online"'
+          name: '&6&lKitPvP Server'
+          lore:
+            - '&e%pinger_players_s26.hosthorde.com:26144%/%pinger_max_s26.hosthorde.com:26144%'
+            - '&7'
+            - '&fA free-for-all fiercly contested'
+            - '&fPvP battle server'
+            - '&7'
+            - '&cEverything in this gamemode is'
+            - '&ccurrently in development, and some'
+            - '&cfeatures may be removed at any time.'
+            - '&7'
+            - '&a▸ Click to connect'
+          flags:
+            - hide_attributes
+          tags:
+            server: kitpvp
+        survival_offline:
+          slot: 13
+          item: craftingtable
+          amount: 1
+          name: '&6&lSurvival Server'
+          lore:
+            - '&c&lOFFLINE'
+            - '&7'
+            - '&fCollect resources, build structures, explore'
+            - '&fthe world, thrive, and showcase your creativity.'
+            - '&7'
+            - '&cEverything in this gamemode is'
+            - '&ccurrently in development, and some'
+            - '&cfeatures may be removed at any time.'
+            - '&7'
+            - '&c▸ Can''t connect'
+          flags:
+            - hide_attributes
+        survival_online:
+          slot: 13
+          item: craftingtable
+          amount: 1
+          condition: '"%pinger_isonline_s26.hosthorde.com:26166%" == "Online"'
+          name: '&6&lSurvival Server'
+          lore:
+            - '&e%pinger_players_s26.hosthorde.com:26166%/%pinger_max_s26.hosthorde.com:26166%'
+            - '&7'
+            - '&fCollect resources, build structures, explore'
+            - '&fthe world, thrive, and showcase your creativity.'
+            - '&7'
+            - '&cEverything in this gamemode is'
+            - '&ccurrently in development, and some'
+            - '&cfeatures may be removed at any time.'
+            - '&7'
+            - '&a▸ Click to connect'
+          flags:
+            - hide_attributes
+          tags:
+            server: survival
+        skyblock_offline:
+          slot: 15
+          item: grass
+          amount: 1
+          name: '&6&lSkyblock Server'
+          lore:
+            - '&c&lOFFLINE'
+            - '&7'
+            - '&fStart on a small floating island, expand,'
+            - '&fcomplete challenges, and more.'
+            - '&7'
+            - '&cEverything in this gamemode is'
+            - '&ccurrently in development, and some'
+            - '&cfeatures may be removed at any time.'
+            - '&7'
+            - '&c▸ Can''t connect'
+          flags:
+            - hide_attributes
+        skyblock_online:
+          slot: 15
+          item: grass
+          amount: 1
+          condition: '"%pinger_isonline_s3.hosthorde.com:26984%" == "Online"'
+          name: '&6&lSkyblock Server'
+          lore:
+            - '&e%pinger_players_s3.hosthorde.com:26984%/%pinger_max_s3.hosthorde.com:26984%'
+            - '&7'
+            - '&fStart on a small floating island, expand,'
+            - '&fcomplete challenges, and more.'
+            - '&7'
+            - '&cEverything in this gamemode is'
+            - '&ccurrently in development, and some'
+            - '&cfeatures may be removed at any time.'
+            - '&7'
+            - '&a▸ Click to connect'
+          flags:
+            - hide_attributes
+          tags:
+            server: skyblock
+extentions:

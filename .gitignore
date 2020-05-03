@@ -1,0 +1,14 @@
+/.settings
+/bin
+/RunicCore
+/target
+.classpath
+.project
+dependency-reduced-pom.xml
+NametagEdit.jar
+NuVotifier.jar
+ProtocolLib.jar
+serverselector.yml
+Spigot.jar
+WorldEdit.jar
+WorldGuard.jar

@@ -1,0 +1,9 @@
+groups:
+  default:
+    options:
+      default: true
+      prefix: '&8<&7Member&8> &7'
+      tablist:
+        prefix: '&8Member &7'
+    permissions:
+      - test.permission

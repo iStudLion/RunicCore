@@ -1,0 +1,33 @@
+magerank: # this is identifier used for /give <player> magerank 1
+    item: enderpearl
+    amount: 1
+    name: '&6&lKitPvP Server'
+    lore:
+      - '&7This is my custom item'
+      - '&7custom lore'
+    color: "#134E19" # if item is leather armor, it will change its color
+    flags:
+      - hide_attributes # hides durability, damage etc
+      #- hide_unbreakable # hides "unbreakable" from item
+      #- hide_enchants # hides enchants
+      #- hide_destroys # removes the blocks it can destroy? not sure
+      #- unbreakable # makes the item unbreakable
+      #- glow # makes the item glow (hides all enchants)
+    needs_permission: false # default is false, permission node would be "runic.use.<identifier>"
+    permission_message: "You don't have enough permission to equip mage rank." # message if they dont have permission
+    condition: '"%vault_rank%" != "Mage"' # if their rank isnt mage, they cant use it
+    condition_message: "&7You've already unlocked Mage rank" # message if they cant use item
+    enchantments:
+      sharpess: 3 # adds sharpness 3
+    use:
+      command: # commands that are executed when player uses item
+        rank: #this can be anything
+          executor: CONSOLE # this can be CONSOLE or PLAYER
+          command: "pex user %player_name% group add Mage"
+        moreMoney:
+          executor: CONSOLE
+          command: "eco give %player_name% 1000"
+      message: # messages that are sent to player upon item use
+        - "&7You've been promoted to &aMage&7."
+    tags:
+      removeOnUse: true # removes item on use

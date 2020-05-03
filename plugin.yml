@@ -1,0 +1,220 @@
+name: ${project.name}
+description: ${project.description}
+version: '${project.version}'
+main: aw.rmjtromp.RunicCore.RunicCore
+author: iStudLion
+softdepend: [PlaceholderAPI, WorldEdit, WorldGuard, NuVotifier]
+loadbefore: [Essentials]
+depend: [ProtocolLib, Vault] # create method that automatically download protocollib (or other dependencies) if not found
+
+commands:
+  runic:
+    description: RunicCore main command
+    usage: /<command>
+    aliases: [runiccore, rc, runicsky, rs, rsc, runicskycore]
+
+
+permissions:
+    runic.spawn.self:
+        description: Allows player to teleport to /spawn
+        default: op
+    runic.spawn.others:
+        description: Allows player to teleport other players to /spawn
+        default: op
+    runic.spawn.bypass:
+        description: Allows player to bypass /spawn cooldown unless in combat
+        default: op
+    runic.spawn.*:
+        description: Allows player to teleport self and other to spawn and also bypass cooldown and delay
+        default: op
+        children:
+            runic.spawn.self: true
+            runic.spawn.others: true
+            runic.spawn.bypass: true
+    runic.chat.mute:
+        description: Allows player to mute chat
+        default: op
+    runic.chat.clear:
+        description: Allows player clear chat
+        default: op
+    runic.chat.bypass:
+        description: Allows player to talk when chat is muted
+        default: op
+    runic.chat.*:
+        description: Allows player to mute and clear chat and talk when chat is muted
+        default: op
+        children:
+            runic.chat.mute: true
+            runic.chat.clear: true
+            runic.chat.bypass: true
+    runic.kitselector.use:
+        description: Allows player to use kit selector
+        default: op
+    runic.kit.*:
+        description: Allows player to use all kits
+        default: op
+    runic.kit.give-others.obtained:
+        description: Allows player to give players kits only if they have already unlocked it
+        default: op
+    runic.kit.give-others.all:
+        description: Allows player to force give players any kit
+        default: op
+    runic.kit.give-others.*:
+        description: Allows player to force give players any kit
+        default: op
+        children:
+            runic.kit.give-others.obtained: true
+            runic.kit.give-others.all: true
+    runic.report.receive:
+        description: Receive report messages
+        default: op
+    runic.staff:
+        description: identified player as staffmember
+        default: op
+    runic.staffmode.self:
+        description: use /staff on self
+        default: op
+    runic.staffmode.others:
+        description: use /staff on other players
+        default: op
+    runic.staffmode.*:
+        description: use /staff on self and other players
+        default: op
+        children:
+            runic.staffmode.self: true
+            runic.staffmode.others: true
+    runic.vanish.self:
+        description: use /vanish on self
+        default: op
+    runic.vanish.others:
+        description: use /vanish on other players
+        default: op
+    runic.vanish.*:
+        description: use /vanish on self and other players
+        default: op
+        children:
+            runic.vanish.self: true
+            runic.vanish.others: true
+    runic.wilderness:
+        description: Allows player to use /wild command
+        default: op
+    runic.wilderness.others:
+        description: Allows player to teleport other players into /wild
+        default: op
+    runic.wildernes.bypass:
+        description: Allows player to bypass /wild cooldown and delay
+        default: op
+    runic.wilderness.*:
+        description: Allows player to teleport self and other into wild and also bypass cooldown and delay
+        default: op
+        children:
+            runic.wilderness: true
+            runic.wilderness.others: true
+            runic.wilderness.bypass: true
+    runic.server.hub:
+        description: Allows player to teleport to hub
+        default: op
+    runic.server.kitpvp:
+        description: Allows player to teleport to kitpvp
+        default: op
+    runic.server.survival:
+        description: Allows player to teleport to survival
+        default: op
+    runic.server.all:
+        description: Allows player to teleport to all servers
+        default: op
+        children:
+            runic.server.hub: true
+            runic.server.kitpvp: true
+            runic.server.survival: true
+    runic.server.others:
+        description: Allows player to teleport others to another server
+        default: op
+    runic.server.*:
+        description: Allows player to teleport self and other to another server
+        default: op
+        children:
+            runic.server.all: true
+            runic.server.others: true
+    runic.anti-advertising.bypass:
+        description: Allows player to bypass anti-advertising
+        default: op
+    runic.afk:
+        description: Allows player to use /afk
+        default: op
+    runic.afk.others:
+        description: Allows player to use /afk on self and others
+        default: op
+        children:
+            runic.afk: true
+    runic.afk.*:
+        description: Allows player to use /afk on self and others
+        default: op
+        children:
+            runic.afk.others: true
+    runic.back:
+        description: Allows player to telport to their last location
+        default: op
+    runic.back.others:
+        description: Allows to teleport anyone to their last location
+        default: op
+        children:
+            runic.back: true
+    runic.back.*:
+        description: Allows to teleport anyone to their last location
+        default: op
+        children:
+            runic.back.others: true
+    runic.broadcast:
+        description: Allows player to broadcast messages to whole server
+        default: op
+    runic.burn:
+        description: Allows player to light anyone on fire
+        default: op
+    runic.extinguish:
+        description: Allows player to use extinguish self from fire
+        default: op
+    runic.extinguish.others:
+        description: Allows player to use extinguish anyone from fire
+        default: op
+        children:
+            runic.extinguish: true
+    runic.extinguish.*:
+        description: Allows player to use extinguish anyone from fire
+        default: op
+        children:
+            runic.extinguish.others: true
+    runic.clearinventory:
+        description: Allows player to clear their own inventory
+        default: op
+    runic.clearinventory.others:
+        description: Allows player to clear anyone's inventory
+        default: op
+        children:
+            runic.clearinventory: true
+    runic.clearinventory.*:
+        description: Allows player to clear anyone's inventory
+        default: op
+        children:
+            runic.clearinventory.others: true
+    runic.*:
+        description: "allows player to use all features"
+        default: op
+        children:
+            runic.spawn.*: true
+            runic.chat.*: true
+            runic.kit.*: true
+            runic.kit.give-others.*: true
+            runic.report.receive: true
+            runic.staffmode.*: true
+            runic.vanish.*: true
+            runic.wilderness.*: true
+            runic.staff: true
+            runic.server.*: true
+            runic.anti-advertising.bypass: true
+            runic.afk.*: true
+            runic.back.*: true
+            runic.broadcast: true
+            runic.burn: true
+            runic.clearinventory.*: true
+            runic.extinguish.*: true
