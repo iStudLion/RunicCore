@@ -1,22 +1,21 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>aw.rmjtromp</groupId>
-  <artifactId>HylightCore</artifactId>
+  <artifactId>RunicCore</artifactId>
   <version>5.0.1-b0b</version>
-  <name>HylightCore</name>
-  <description>Hylight Network core plugin</description>
+  <name>RunicCore</name>
+  <description>RunicSky core plugin</description>
   <organization>
-	<name>Hylight Network LLC</name>
-	<url>https://www.hylight.org/</url>
+	<name>RunicSky</name>
+	<url>https://www.runicsky.com/</url>
   </organization>
   <developers>
   	<developer>
   		<name>iStudLion</name>
   		<email>istudlions@gmail.com</email>
-  		<organization>Hylight Network LLC</organization>
+  		<organization>RunicSky</organization>
   		<roles>
-  			<role>Owner</role>
-  			<role>Lead Developer</role>
+  			<role>Developer</role>
   		</roles>
   	</developer>
   </developers>
